@@ -7,6 +7,8 @@ import {
 } from 'typeorm';
 
 import { UserRole } from '../enums/user-role.enum';
+import { OneToMany } from 'typeorm';
+import { Ticket } from '../../tickets/entities/ticket.entity';
 
 @Entity('users')
 export class User {
@@ -15,6 +17,9 @@ export class User {
 
   @Column()
   name: string;
+  
+  @OneToMany(() => Ticket, (ticket) => ticket.vendor)
+tickets: Ticket[];
 
   @Column({
     unique: true,

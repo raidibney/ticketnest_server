@@ -9,6 +9,7 @@ import { BookingsModule } from './bookings/bookings.module';
 import { PaymentsModule } from './payments/payments.module';
 import { AdminModule } from './admin/admin.module';
 import { VendorModule } from './vendor/vendor.module';
+import { DatabaseSeed } from './database/database.seed';
 
 @Module({
   imports: [
@@ -40,5 +41,6 @@ import { VendorModule } from './vendor/vendor.module';
     AdminModule,
     VendorModule,
   ],
+  providers: [DatabaseSeed],
 })
 export class AppModule {}
